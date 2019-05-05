@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<AnchorPane fx:id="mainPane" prefHeight="368.0" prefWidth="542.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLRegisterController">
+    <stylesheets>
+        <URL value="@../style/mainStyle.css"/>
+        <URL value="@../style/register.css"/>
+    </stylesheets>
+    <HBox alignment="TOP_CENTER" layoutX="34.0" layoutY="290.0" prefHeight="60.0" prefWidth="474.0" spacing="10.0"
+          AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="34.0"
+          AnchorPane.topAnchor="290.0">
+        <Button fx:id="btnSignUp" alignment="CENTER" mnemonicParsing="false" onAction="#signUp" prefHeight="52.0"
+                prefWidth="150.0" text="Sign UP"/>
+        <Button fx:id="btnSignUpWithGoogle" alignment="CENTER" mnemonicParsing="false" prefHeight="52.0"
+                prefWidth="150.0" text="Google"/>
+        <Button fx:id="btnSignUpWithFacebook" alignment="CENTER" mnemonicParsing="false" prefHeight="52.0"
+                prefWidth="150.0" text="Facebook"/>
+    </HBox>
+    <GridPane hgap="15.0" layoutX="210.0" layoutY="106.0" prefHeight="137.0" prefWidth="297.0"
+              AnchorPane.rightAnchor="30.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="33.0" minHeight="3.0" prefHeight="23.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <Label text="Username"/>
+        <TextField fx:id="edtUsername" prefHeight="25.0" prefWidth="204.0" GridPane.columnSpan="2147483647"
+                   GridPane.rowIndex="1"/>
+        <Label text="Email" GridPane.rowIndex="2"/>
+        <TextField fx:id="edtEmail" prefHeight="25.0" prefWidth="169.0" GridPane.columnSpan="2147483647"
+                   GridPane.rowIndex="3"/>
+        <Label text="Password" GridPane.rowIndex="4"/>
+        <Label text="Confirm Password" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <PasswordField fx:id="edtPassword" prefColumnCount="1" prefHeight="25.0" prefWidth="138.0"
+                       GridPane.rowIndex="5"/>
+        <PasswordField fx:id="edtConfirmPassword" prefColumnCount="2" prefHeight="25.0" prefWidth="138.0"
+                       GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    </GridPane>
+    <StackPane fx:id="imgProfilePane" layoutX="37.0" layoutY="93.0" maxHeight="150.0" maxWidth="150.0"
+               minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
+        <ImageView fx:id="imgViewProfile" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="/icons/defaultProfileImage.png"/>
+        </ImageView>
+        <Button fx:id="btnChangeImage" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#changeImage"
+                prefHeight="150.0" prefWidth="150.0" text="Change Image" StackPane.alignment="BOTTOM_CENTER"/>
+    </StackPane>
+    <Label fx:id="lblRegistration" alignment="CENTER" layoutY="30.0" text="REGISTRATION" textAlignment="CENTER"
+           wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"/>
+    <Label fx:id="lblError" layoutX="215.0" layoutY="252.0" prefHeight="17.0" prefWidth="297.0"/>
+</AnchorPane>

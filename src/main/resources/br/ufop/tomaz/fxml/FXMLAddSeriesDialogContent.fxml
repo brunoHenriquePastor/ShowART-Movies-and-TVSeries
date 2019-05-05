@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.controlsfx.control.CheckComboBox?>
+<?import ratingBar.RatingBar?>
+
+<fx:root maxHeight="517.0" minHeight="516.0" prefHeight="517.0" prefWidth="717.0" type="javafx.scene.control.DialogPane"
+         xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <header>
+        <Label alignment="CENTER" prefHeight="40.0" prefWidth="600.0" text="ADD TV SERIES" textAlignment="CENTER"/>
+    </header>
+    <content>
+        <GridPane minHeight="332.0" prefHeight="332.0" prefWidth="652.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="264.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="325.0" minWidth="10.0" prefWidth="98.0"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0"
+                                   prefWidth="218.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="20.0" minHeight="2.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="20.0" minHeight="0.0" prefHeight="20.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="126.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                <RowConstraints minHeight="30.0" prefHeight="150.0"/>
+            </rowConstraints>
+            <Label text="Title"/>
+            <TextArea fx:id="edtDescription" prefHeight="81.0" prefWidth="434.0" wrapText="true" GridPane.columnSpan="2"
+                      GridPane.rowIndex="3"/>
+            <Label alignment="TOP_LEFT" text="Rating" GridPane.columnIndex="2" GridPane.halignment="LEFT">
+                <GridPane.margin>
+                    <Insets/>
+                </GridPane.margin>
+                <padding>
+                    <Insets left="10.0"/>
+                </padding>
+            </Label>
+            <Label text="Description" GridPane.rowIndex="2"/>
+            <TextField fx:id="edtTitle" maxHeight="30.0" prefHeight="25.0" prefWidth="222.0" GridPane.rowIndex="1"/>
+            <ImageView fx:id="imgCover" fitHeight="178.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true"
+                       GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.rowSpan="2"
+                       GridPane.valignment="TOP">
+            </ImageView>
+            <RatingBar fx:id="ratingBar" maxHeight="40.0" numberOfStars="10" prefHeight="40.0" sizeOfStars="20.0"
+                       GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <CheckComboBox fx:id="ckbCategories" prefHeight="25.0" prefWidth="265.0" GridPane.rowIndex="5"/>
+            <Label text="Categories" GridPane.rowIndex="4"/>
+            <Label text="Release Date" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                <GridPane.margin>
+                    <Insets left="20.0"/>
+                </GridPane.margin>
+            </Label>
+            <DatePicker fx:id="dpReleaseDate" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <GridPane.margin>
+                    <Insets left="20.0"/>
+                </GridPane.margin>
+            </DatePicker>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1"
+                  GridPane.rowIndex="1">
+                <Button fx:id="btnSearch" mnemonicParsing="false" prefHeight="30.0" prefWidth="45.0" text="Search"/>
+                <ProgressIndicator fx:id="downloadProgressIndicator" prefHeight="30.0" prefWidth="53.0"
+                                   progress="0.0"/>
+            </HBox>
+            <ListView fx:id="castListView" orientation="HORIZONTAL" prefHeight="130.0" prefWidth="697.0"
+                      GridPane.columnSpan="3" GridPane.rowIndex="7">
+                <GridPane.margin>
+                    <Insets/>
+                </GridPane.margin>
+            </ListView>
+            <Label text="Cast" GridPane.rowIndex="6"/>
+        </GridPane>
+    </content>
+    <ButtonType fx:constant="OK"/>
+    <ButtonType fx:constant="CANCEL"/>
+</fx:root>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import org.controlsfx.control.HiddenSidesPane?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+       <MenuBar BorderPane.alignment="CENTER">
+           <Menu mnemonicParsing="false" text="File">
+               <MenuItem mnemonicParsing="false" text="Close" />
+           </Menu>
+           <Menu mnemonicParsing="false" text="Edit">
+               <MenuItem mnemonicParsing="false" text="Delete" />
+           </Menu>
+           <Menu mnemonicParsing="false" text="Help">
+               <MenuItem mnemonicParsing="false" text="About" />
+           </Menu>
+       </MenuBar>
+   </top>
+   <center>
+       <HiddenSidesPane prefHeight="466.0" prefWidth="665.0" triggerDistance="100.0" BorderPane.alignment="CENTER">
+           <left>
+               <AnchorPane prefHeight="466.0" prefWidth="87.0" BorderPane.alignment="CENTER">
+                   <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="209.0" prefHeight="49.0" prefWidth="73.0" text="Button" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                       <graphic>
+                           <FontIcon iconLiteral="fa-home" iconSize="25" />
+                       </graphic>
+                   </JFXButton>
+                   <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="272.0" prefHeight="49.0" prefWidth="73.0" text="Button" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                       <graphic>
+                           <FontIcon iconLiteral="fa-question" iconSize="25" />
+                       </graphic>
+                   </JFXButton>
+                   <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="154.0" prefHeight="49.0" prefWidth="73.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                       <graphic>
+                           <FontIcon iconLiteral="fa-search" iconSize="25" />
+                       </graphic>
+                   </JFXButton>
+               </AnchorPane>
+           </left>
+       </HiddenSidesPane>
+   </center>
+
+</BorderPane>

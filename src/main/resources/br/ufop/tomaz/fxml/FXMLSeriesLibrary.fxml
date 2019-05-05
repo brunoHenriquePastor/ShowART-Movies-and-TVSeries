@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.controlsfx.control.GridView?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(dimgrey,black);" stylesheets="@../style/content.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLSeriesLibraryController">
+   <Label fx:id="lblStatus" layoutX="215.0" layoutY="360.0" prefHeight="17.0" prefWidth="171.0" text="Status:" AnchorPane.bottomAnchor="20.0" />
+   <GridView fx:id="gridView" cellHeight="210.0" cellWidth="130.0" layoutX="12.0" layoutY="9.0" prefHeight="265.0" prefWidth="578.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+</AnchorPane>

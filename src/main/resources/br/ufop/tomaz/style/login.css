@@ -1,0 +1,38 @@
+#lblKeepAllYouMedia{
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
+}
+
+#lblWithShowartYou{
+    -fx-font-weight: bold;
+}
+
+#btnShowPassword{
+    -fx-background-color: transparent;
+}
+
+#paneSignIn{
+    -fx-background-color: #52186e;
+}
+
+#paneSignUp{
+    -fx-background-color: radial-gradient(focus-angle 80deg,radius 100%,rgba(189,49,255,0.8) 50%, rgba(20, 148, 237, 0.8) 100%);
+}
+
+#imgBackground{
+    -fx-background-image: url("../images/fundoLogin.png");
+}
+
+#lblError{
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+    -fx-text-fill: red;
+    -fx-effect: dropshadow(gaussian,gray,0,0,0,0);
+}
+
+.jfx-text-field,.jfx-password-field{
+    -fx-text-fill: WHITE;
+    -fx-prompt-text-fill: GRAY;
+    -jfx-unfocus-color: #4d4d4d;
+    -jfx-focus-color: linear-gradient(to right, #ff0982, #131dff,#ff0982);
+}

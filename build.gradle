@@ -1,0 +1,46 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.7'
+}
+
+group 'br.ufop.tomaz'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+javafx {
+    version = "12.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media','javafx.swing']
+}
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = 'br.ufop.tomaz.Main'
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.controlsfx/controlsfx
+    compile group: 'org.controlsfx', name: 'controlsfx', version: '11.0.0'
+    // https://mvnrepository.com/artifact/javax.mail/javax.mail-api
+    compile group: 'javax.mail', name: 'javax.mail-api', version: '1.6.2'
+    // https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.2.Final'
+    // https://mvnrepository.com/artifact/com.jfoenix/jfoenix
+    compile group: 'com.jfoenix', name: 'jfoenix', version: '9.0.8'
+    // https://mvnrepository.com/artifact/net.coobird/thumbnailator
+    compile group: 'net.coobird', name: 'thumbnailator', version: '0.4.8'
+    // https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.27.2.1'
+    // https://mvnrepository.com/artifact/org.jsoup/jsoup
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
+    // https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-javafx
+    compile group: 'org.kordamp.ikonli', name: 'ikonli-javafx', version: '11.3.3'
+    // https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-fontawesome-pack
+    compile group: 'org.kordamp.ikonli', name: 'ikonli-fontawesome-pack', version: '11.3.3'
+
+
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
