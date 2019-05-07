@@ -21,13 +21,13 @@
    <top>
        <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
            <Menu mnemonicParsing="false" text="File">
-               <MenuItem mnemonicParsing="false" text="Close"/>
+               <MenuItem mnemonicParsing="false" text="Close" />
            </Menu>
            <Menu mnemonicParsing="false" text="Edit">
-               <MenuItem mnemonicParsing="false" text="Delete"/>
+               <MenuItem mnemonicParsing="false" text="Delete" />
            </Menu>
            <Menu mnemonicParsing="false" text="Help">
-               <MenuItem mnemonicParsing="false" text="About"/>
+               <MenuItem mnemonicParsing="false" text="About" />
            </Menu>
        </MenuBar>
    </top>
@@ -35,9 +35,8 @@
        <AnchorPane fx:id="paneBackground" prefWidth="740.0" BorderPane.alignment="CENTER">
            <AnchorPane fx:id="paneSignIn" layoutX="379.0" layoutY="30.0" prefHeight="461.0" prefWidth="338.0" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
                <StackPane fx:id="imgProfilePane" layoutX="102.0" layoutY="22.0" prefHeight="135.0" prefWidth="135.0">
-                   <ImageView fx:id="imgViewProfile" fitHeight="135.0" fitWidth="135.0" pickOnBounds="true"
-                              preserveRatio="true">
-                       <Image url="@../icons/defaultProfileImage.png"/>
+                   <ImageView fx:id="imgViewProfile" fitHeight="135.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
+                       <Image url="@../icons/defaultProfileImage.png" />
                    </ImageView>
                    <JFXButton fx:id="btnChangeImgProfile" onAction="#changeImage" prefHeight="135.0" prefWidth="142.0" text="Change Image" />
                </StackPane>
@@ -51,7 +50,7 @@
                </font>
             </JFXTextField>
                <AnchorPane layoutX="51.0" layoutY="253.0" prefHeight="30.0" prefWidth="230.0" AnchorPane.leftAnchor="52.0" AnchorPane.rightAnchor="25.0">
-                   <JFXTextField fx:id="edtVisiblePassword" disable="true" layoutX="14.0" layoutY="2.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                   <JFXTextField fx:id="edtVisiblePassword" disable="true" layoutX="14.0" layoutY="2.0" promptText="Password" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                    <JFXPasswordField fx:id="edtHiddenPassword" layoutX="29.0" prefHeight="30.0" prefWidth="230.0" promptText="Password" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                   <font>
                      <Font name="FontAwesome" size="13.0" />
@@ -66,7 +65,7 @@
                <font>
                   <Font name="FontAwesome" size="13.0" />
                </font></JFXCheckBox>
-               <JFXButton fx:id="btnLogin" alignment="CENTER" graphicTextGap="10.0" layoutX="179.0" layoutY="295.0" prefHeight="40.0" prefWidth="135.0" text="Sign UP!" AnchorPane.rightAnchor="26.0">
+               <JFXButton fx:id="btnSignUp" onAction="#registerUser" alignment="CENTER" graphicTextGap="10.0" layoutX="179.0" layoutY="295.0" prefHeight="40.0" prefWidth="135.0" text="Sign UP!" AnchorPane.rightAnchor="26.0">
                    <graphic>
                        <FontIcon iconColor="WHITE" iconLiteral="fa-user-plus" iconSize="20" />
                    </graphic>

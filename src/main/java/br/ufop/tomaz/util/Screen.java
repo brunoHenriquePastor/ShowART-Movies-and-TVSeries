@@ -1,7 +1,7 @@
 package br.ufop.tomaz.util;
 
 public enum Screen {
-    LOGIN("FXMLLogin.fxml"), REGISTER("FXMLRegister.fxml");
+    LOGIN("FXMLLogin.fxml"), REGISTER("FXMLRegister.fxml"), MAIN("FXMLMain.fxml");
 
     private final String fxmlName;
 

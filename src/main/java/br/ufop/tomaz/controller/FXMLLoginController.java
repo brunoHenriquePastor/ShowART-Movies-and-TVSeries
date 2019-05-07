@@ -27,6 +27,7 @@ public class FXMLLoginController implements Initializable {
     @FXML private JFXCheckBox ckbKeepMe;
     @FXML private JFXButton btnShowPassword;
     @FXML private MenuBar menuBar;
+    @FXML private JFXButton btnLogin;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -41,7 +42,10 @@ public class FXMLLoginController implements Initializable {
         edtVisiblePassword.visibleProperty().bind(btnShowPassword.pressedProperty());
         edtHiddenPassword.visibleProperty().bind(btnShowPassword.pressedProperty().not());
 
-        //TODO -- Disable buttons if any field is empty.
+        //Controls the login button behavior
+        btnLogin.disableProperty()
+                .bind(edtUsername.textProperty().isEmpty()
+                        .or(edtHiddenPassword.textProperty().isEmpty()));
     }
 
     @FXML

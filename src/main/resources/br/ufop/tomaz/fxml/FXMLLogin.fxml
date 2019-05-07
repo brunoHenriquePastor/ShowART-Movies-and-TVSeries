@@ -25,7 +25,7 @@
                <font>
                   <Font name="FontAwesome" size="13.0" />
                </font></Label>
-            <JFXButton fx:id="btnJoinUs" onAction="#signUp" graphicTextGap="10.0" layoutX="14.0" layoutY="290.0" prefHeight="45.0" prefWidth="164.0" text="Join us!" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="290.0">
+            <JFXButton fx:id="btnJoinUs" graphicTextGap="10.0" layoutX="14.0" layoutY="290.0" onAction="#signUp" prefHeight="45.0" prefWidth="164.0" text="Join us!" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="290.0">
                <graphic>
                   <FontIcon iconLiteral="fa-user-plus" iconSize="35" />
                </graphic>
@@ -37,7 +37,7 @@
                  </ImageView>
       
                  <AnchorPane layoutX="54.0" layoutY="254.0" prefHeight="30.0" prefWidth="230.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="25.0">
-                  <JFXTextField fx:id="edtVisiblePassword" disable="true" layoutX="14.0" layoutY="2.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <JFXTextField fx:id="edtVisiblePassword" disable="true" layoutX="14.0" layoutY="2.0" promptText="Password" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      <JFXPasswordField fx:id="edtHiddenPassword" layoutX="29.0" prefHeight="30.0" prefWidth="230.0" promptText="Password" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      <JFXButton fx:id="btnShowPassword" alignment="BOTTOM_CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: TRANSPARENT;" text="Button" AnchorPane.rightAnchor="0.0">
                          <graphic>
