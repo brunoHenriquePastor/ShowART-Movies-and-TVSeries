@@ -13,44 +13,48 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufop.tomaz.controller.FXMLLoginController">
-   <left>
-       <AnchorPane fx:id="paneSignIn" prefHeight="441.0" prefWidth="272.0" BorderPane.alignment="CENTER">
-           <ImageView fx:id="imgProfile" fitHeight="150.0" fitWidth="150.0" layoutX="61.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@../icons/defaultProfileImage.png" />
-           </ImageView>
-         <JFXTextField fx:id="edtUsername" layoutX="24.0" layoutY="205.0" prefHeight="28.0" prefWidth="225.0" promptText="Email/Username" />
-
-           <AnchorPane layoutX="24.0" layoutY="254.0" prefHeight="28.0" prefWidth="225.0">
-            <JFXTextField fx:id="edtVisiblePassword" disable="true" layoutX="14.0" layoutY="2.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-               <JFXPasswordField fx:id="edtHiddenPassword" prefHeight="28.0" prefWidth="225.0" promptText="Password" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-               <JFXButton fx:id="btnShowPassword" alignment="BOTTOM_CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" prefHeight="30.0" prefWidth="33.0" text="Button" AnchorPane.rightAnchor="0.0">
-                   <graphic>
-                       <FontIcon iconColor="#f2f0f0" iconLiteral="fa-eye" />
-                   </graphic>
-               </JFXButton>
-           </AnchorPane>
-         <JFXCheckBox fx:id="ckbKeepMe" checkedColor="#e407a6" layoutX="24.0" layoutY="326.0" text="Keep Me!" textFill="WHITE" unCheckedColor="#e309a975" />
-         <JFXButton fx:id="btnLogin" graphicTextGap="10.0" layoutX="133.0" layoutY="318.0" prefHeight="35.0" prefWidth="117.0" text="Login">
-            <graphic>
-               <FontIcon iconColor="WHITE" iconLiteral="fa-paper-plane" iconSize="18" />
-            </graphic>
-         </JFXButton>
-       </AnchorPane>
-   </left>
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufop.tomaz.controller.FXMLLoginController">
    <center>
        <AnchorPane fx:id="imgBackground" BorderPane.alignment="CENTER">
            <AnchorPane fx:id="paneSignUp" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <Label fx:id="lblDontYouHaveAnAccount" layoutX="31.0" layoutY="45.0" style="-fx-font-size: 20;" text="Don't you have an account?" />
-               <Label fx:id="lblKeepAllYouMedia" layoutX="31.0" layoutY="92.0" prefHeight="90.0" prefWidth="368.0" text="KEEP ALL YOUR MEDIA ORGANIZED WITH SHOWART!" />
-               <Label fx:id="lblWithShowartYou" layoutX="144.0" layoutY="221.0" prefHeight="73.0" prefWidth="301.0" style="-fx-font-size: 15; -fx-wrap-text: true;" text="With SHOWART you don't have to worry how to organize MOVIES and SERIES. You only have to ENJOY !" textAlignment="JUSTIFY" AnchorPane.rightAnchor="30.0" />
-            <JFXButton fx:id="btnJoinUs" graphicTextGap="10.0" layoutX="251.0" layoutY="349.0" prefHeight="50.0" prefWidth="200.0" text="Join us!" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="20.0">
+               <Label fx:id="lblDontYouHaveAnAccount" layoutX="14.0" layoutY="256.0" style="-fx-font-size: 20;" text="Don't you have an account?" />
+               <Label fx:id="lblKeepAllYouMedia" layoutX="14.0" layoutY="141.0" prefHeight="90.0" prefWidth="368.0" text="KEEP ALL YOUR MEDIA ORGANIZED WITH SHOWART!">
+               <font>
+                  <Font name="FontAwesome" size="13.0" />
+               </font></Label>
+            <JFXButton fx:id="btnJoinUs" onAction="#signUp" graphicTextGap="10.0" layoutX="14.0" layoutY="290.0" prefHeight="45.0" prefWidth="164.0" text="Join us!" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="290.0">
                <graphic>
                   <FontIcon iconLiteral="fa-user-plus" iconSize="35" />
                </graphic>
             </JFXButton>
+             <AnchorPane fx:id="paneSignIn" layoutX="358.0" layoutY="24.0" prefHeight="451.0" prefWidth="309.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
+               <JFXTextField fx:id="edtUsername" layoutX="53.0" layoutY="212.0" prefHeight="28.0" prefWidth="233.0" promptText="Email/Username" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="25.0" />
+                 <ImageView fx:id="imgProfile" fitHeight="135.0" fitWidth="135.0" layoutX="87.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                     <Image url="@../icons/defaultProfileImage.png" />
+                 </ImageView>
+      
+                 <AnchorPane layoutX="54.0" layoutY="254.0" prefHeight="30.0" prefWidth="230.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="25.0">
+                  <JFXTextField fx:id="edtVisiblePassword" disable="true" layoutX="14.0" layoutY="2.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     <JFXPasswordField fx:id="edtHiddenPassword" layoutX="29.0" prefHeight="30.0" prefWidth="230.0" promptText="Password" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     <JFXButton fx:id="btnShowPassword" alignment="BOTTOM_CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="182.0" prefHeight="30.0" prefWidth="33.0" style="-fx-background-color: TRANSPARENT;" text="Button" AnchorPane.rightAnchor="0.0">
+                         <graphic>
+                             <FontIcon iconColor="#f2f0f0" iconLiteral="fa-eye" />
+                         </graphic>
+                     </JFXButton>
+                 </AnchorPane>
+               <JFXCheckBox fx:id="ckbKeepMe" checkedColor="#e407a6" layoutX="25.0" layoutY="323.0" text="Keep Me!" textFill="WHITE" unCheckedColor="#e309a975" />
+               <JFXButton fx:id="btnLogin" alignment="CENTER" graphicTextGap="10.0" layoutX="197.0" layoutY="314.0" prefHeight="40.0" prefWidth="135.0" text="Login" AnchorPane.rightAnchor="26.0">
+                  <graphic>
+                     <FontIcon iconColor="WHITE" iconLiteral="fa-paper-plane" iconSize="18" />
+                  </graphic>
+               </JFXButton>
+               <JFXButton fx:id="btnForgotPassword" layoutX="94.0" layoutY="379.0" mnemonicParsing="false" text="Forgot Password?" />
+               <FontIcon iconLiteral="fa-user" iconSize="20" layoutX="33.0" layoutY="235.0" />
+               <FontIcon iconLiteral="fa-unlock" iconSize="20" layoutX="31.0" layoutY="278.0" />
+             </AnchorPane>
            </AnchorPane>
        </AnchorPane>
    </center>

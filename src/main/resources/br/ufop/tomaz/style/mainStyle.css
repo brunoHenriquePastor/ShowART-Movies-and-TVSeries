@@ -10,10 +10,15 @@
 
 .button{
     -fx-background-color: #240a35;
-    -fx-background-radius: 0;
+    -fx-background-radius: 10;
     -fx-text-fill: white;
     -fx-font-size: 14;
     -fx-font-weight: 700;
+    -fx-cursor: HAND;
+}
+
+.check-box{
+    -fx-cursor: HAND;
 }
 
 .button:hover{
@@ -22,7 +27,7 @@
 }
 
 .button:pressed{
-    -fx-effect: dropshadow(gaussian, #240a35,3,1,0,0);
+    -fx-effect: dropshadow(gaussian, #240a35,2,1,0,0);
 }
 
 .menu-bar{
@@ -39,4 +44,8 @@
 }
 .ikonli-font-icon{
     -fx-icon-color: WHITE;
+}
+
+.btnShowPassword{
+    -fx-background-color: transparent;
 }

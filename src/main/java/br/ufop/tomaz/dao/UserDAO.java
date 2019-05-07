@@ -2,29 +2,13 @@ package br.ufop.tomaz.dao;
 
 import br.ufop.tomaz.model.User;
 
-import java.sql.Connection;
-import java.util.LinkedList;
+public interface UserDAO {
 
-public abstract class UserDAO {
+    boolean addUser(User user);
 
-    protected Connection connection;
+    User retrieveUser(String id);
 
-    public UserDAO(Connection connection) {
-        this.connection = connection;
-    }
+    boolean removeUser(User user);
 
-    public abstract User retrieveUser(String username);
-
-    public abstract User lastLogged();
-
-    public abstract boolean addUserOnDB(User user);
-
-    public abstract boolean deleteUserOnDB(String username);
-
-    public abstract boolean updateUserOnDB(User user);
-
-    public abstract LinkedList<User> retrieveKeepConnected();
-
-    public abstract void closeConnection();
-
+    boolean updateUser(User user);
 }

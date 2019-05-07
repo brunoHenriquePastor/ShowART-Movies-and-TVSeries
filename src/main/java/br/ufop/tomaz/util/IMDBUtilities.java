@@ -1,11 +1,10 @@
 package br.ufop.tomaz.util;
 
+import br.ufop.tomaz.model.Actor;
+import br.ufop.tomaz.model.SerieAndMovieInterface.Category;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.image.Image;
-import br.ufop.tomaz.model.Actor;
-import br.ufop.tomaz.model.SerieAndMovieInterface.Category;
-import br.ufop.tomaz.model.UserSession;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -81,13 +80,7 @@ public class IMDBUtilities {
         Element divPoster = imdbPage.getElementsByClass("poster").first();
         String separator = System.getProperty("file.separator");
         String imgUrl = divPoster.getElementsByTag("img").first().attr("src");
-        String dir = UserSession.getInstance()
-                                .getUser()
-                                .getResourcesPath()
-                                .concat(separator)
-                                .concat("Series")
-                                .concat(separator)
-                                .concat(title.getValue());
+        String dir = System.getProperty("user.home");
         File directory = new File(dir);
         directory.mkdirs();
         return downloadImage(title.getValue(),imgUrl,dir);
@@ -167,7 +160,7 @@ public class IMDBUtilities {
         ConcurrentMap<Integer, Image> mapEpisodesImages = new ConcurrentHashMap<>();
         Document seasonIMDBPage = getSeasonPage(season);
         String separator = System.getProperty("file.separator");
-        String seasonImagesPath = UserSession.getInstance().getUser().getResourcesPath()
+        String seasonImagesPath = System.getProperty("user.home")
                 .concat(separator).concat("Series")
                 .concat(separator).concat(title.getValue())
                 .concat(separator).concat("Season ")
@@ -288,7 +281,7 @@ public class IMDBUtilities {
     public List<Actor> getCast() {
         ConcurrentMap <String, Actor> cast = new ConcurrentHashMap<>();
         String separator = System.getProperty("file.separator");
-        String dir = UserSession.getInstance().getUser().getResourcesPath()
+        String dir = System.getProperty("user.home")
                                 .concat(separator).concat("Series")
                                 .concat(separator).concat(title.getValue())
                                 .concat(separator).concat("Cast");

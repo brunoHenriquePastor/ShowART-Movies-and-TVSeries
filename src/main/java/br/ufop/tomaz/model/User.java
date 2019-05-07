@@ -4,51 +4,45 @@ import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import br.ufop.tomaz.util.CustomImage;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Calendar;
+import java.time.Instant;
 import java.util.Date;
 
 @Entity
+@Access(AccessType.PROPERTY)
 public class User {
 
-    @Id
-    private final StringProperty username;
-    private final StringProperty password;
-    private CustomImage imgProfile;
-    private final StringProperty email;
-    private final BooleanProperty isRememberMyPassword;
+    private final StringProperty username = new SimpleStringProperty("");
+    private final StringProperty password = new SimpleStringProperty("");
+    private final StringProperty imgProfilePath = new SimpleStringProperty("");
+    private final StringProperty email = new SimpleStringProperty("");
+    private final BooleanProperty rememberMyPassword = new SimpleBooleanProperty(false);
     private Date lastLogin;
-    private final StringProperty resourcesPath = new SimpleStringProperty("");
+
+    public User(){
+        setLastLogin(Date.from(Instant.now()));
+    }
 
     public User(String username,
                 String password,
-                CustomImage imgProfile,
+                String imgProfilePath,
                 String email,
-                boolean isRememberMyPassword,
+                boolean rememberMyPassword,
                 Date lastLogin
     ) {
-        this.username = new SimpleStringProperty(username);
-        this.password = new SimpleStringProperty(password);
-        this.imgProfile = imgProfile;
-        this.email = new SimpleStringProperty(email);
-        this.isRememberMyPassword = new SimpleBooleanProperty(isRememberMyPassword);
-        this.lastLogin = lastLogin;
-        this.makeUserResourcesDirectories();
+        setUsername(username);
+        setPassword(password);
+        setImgProfilePath(imgProfilePath);
+        setEmail(email);
+        setRememberMyPassword(rememberMyPassword);
+        setLastLogin(lastLogin);
     }
 
-    public User(String username, String password, CustomImage imgProfile, String email, boolean isRememberMyPassword) {
-        this.username = new SimpleStringProperty(username);
-        this.password = new SimpleStringProperty(password);
-        this.imgProfile = imgProfile;
-        this.email = new SimpleStringProperty(email);
-        this.isRememberMyPassword = new SimpleBooleanProperty(isRememberMyPassword);
-        this.lastLogin = Calendar.getInstance().getTime();
-        this.makeUserResourcesDirectories();
-    }
-
+    @Id
     public String getUsername() {
         return username.get();
     }
@@ -73,14 +67,6 @@ public class User {
         this.password.set(password);
     }
 
-    public CustomImage getImgProfile() {
-        return imgProfile;
-    }
-
-    public void setImgProfile(CustomImage imgProfile) {
-        this.imgProfile = imgProfile;
-    }
-
     public String getEmail() {
         return email.get();
     }
@@ -93,16 +79,16 @@ public class User {
         this.email.set(email);
     }
 
-    public boolean getIsRememberMyPassword() {
-        return isRememberMyPassword.get();
+    public boolean isRememberMyPassword() {
+        return rememberMyPassword.get();
     }
 
-    public BooleanProperty isRememberMyPasswordProperty() {
-        return isRememberMyPassword;
+    public BooleanProperty rememberMyPasswordProperty() {
+        return rememberMyPassword;
     }
 
-    public void setIsRememberMyPassword(boolean isRememberMyPassword) {
-        this.isRememberMyPassword.set(isRememberMyPassword);
+    public void setRememberMyPassword(boolean rememberMyPassword) {
+        this.rememberMyPassword.set(rememberMyPassword);
     }
 
     public Date getLastLogin() {
@@ -113,24 +99,15 @@ public class User {
         this.lastLogin = lastLogin;
     }
 
-    public String getResourcesPath() {
-        return resourcesPath.get();
+    public String getImgProfilePath() {
+        return imgProfilePath.get();
     }
 
-    public StringProperty resourcesPathProperty() {
-        return resourcesPath;
+    public StringProperty imgProfilePathProperty() {
+        return imgProfilePath;
     }
 
-    public void setResourcesPath(String resourcesPath) {
-        this.resourcesPath.set(resourcesPath);
-    }
-
-    private void makeUserResourcesDirectories() {
-        String userResourcePath = System.getProperty("user.home")
-                .concat(System.getProperty("file.separator"))
-                .concat("ShowART---Movies-and-Series")
-                .concat(System.getProperty("file.separator"))
-                .concat(username.getValue());
-        setResourcesPath(userResourcePath);
+    public void setImgProfilePath(String imgProfilePath) {
+        this.imgProfilePath.set(imgProfilePath);
     }
 }

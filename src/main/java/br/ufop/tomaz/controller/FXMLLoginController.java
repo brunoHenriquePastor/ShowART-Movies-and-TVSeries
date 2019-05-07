@@ -1,6 +1,8 @@
 package br.ufop.tomaz.controller;
 
 
+import br.ufop.tomaz.Main;
+import br.ufop.tomaz.util.Screen;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
@@ -11,6 +13,7 @@ import javafx.scene.control.MenuBar;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -37,6 +40,13 @@ public class FXMLLoginController implements Initializable {
         edtVisiblePassword.textProperty().bind(edtHiddenPassword.textProperty());
         edtVisiblePassword.visibleProperty().bind(btnShowPassword.pressedProperty());
         edtHiddenPassword.visibleProperty().bind(btnShowPassword.pressedProperty().not());
+
+        //TODO -- Disable buttons if any field is empty.
+    }
+
+    @FXML
+    private void signUp() throws IOException {
+        Main.setScreen(Screen.REGISTER);
     }
 
 

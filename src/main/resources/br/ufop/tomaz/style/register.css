@@ -2,29 +2,32 @@
     -fx-border-radius: 100;
 }
 
-#lblRegistration{
-    -fx-font-size: 30;
-    -fx-font-weight: 700;
-}
-
-#lblError{
-    -fx-font-weight: bold;
-    -fx-font-size: 13;
-    -fx-text-fill: red;
-    -fx-effect: dropshadow(gaussian,gray,0,0,0,0);
-}
-
-#mainPane {
-    -fx-background-color: radial-gradient(focus-angle 80deg,radius 100%,rgba(189,49,255,1) 50%, rgba(20, 148, 237,1) 100%);
-}
-
-#btnChangeImage{
+#btnChangeImgProfile{
     -fx-opacity: 0;
     -fx-text-fill: white;
     -fx-background-color: #515551;
     -fx-alignment: center;
     -fx-font-size: 14;
 }
-#btnChangeImage:hover{
+#btnChangeImgProfile:hover{
     -fx-opacity: 0.7;
+}
+
+.button-login{
+    -fx-pref-height: 45px;
+    -fx-pref-width: 220px;
+    -fx-graphic-text-gap: 10px;
+    -fx-alignment: CENTER;
+}
+
+.button-social-media{
+    -fx-pref-height: 35px;
+    -fx-pref-width: 135px;
+    -fx-alignment: CENTER;
+    -fx-font-size: 10pt;
+    -fx-graphic-text-gap: 10;
+}
+
+#paneBackground{
+    -fx-background-image: url("../images/batmanWallpaper.png");
 }
