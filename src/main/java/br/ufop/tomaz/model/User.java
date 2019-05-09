@@ -5,15 +5,13 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-import javax.persistence.Access;
-import javax.persistence.AccessType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.Instant;
 import java.util.Date;
 
 @Entity
 @Access(AccessType.PROPERTY)
+@NamedQuery(name = "User.findAllRemembered", query = "SELECT U FROM User U WHERE U.rememberMyPassword = TRUE")
 public class User {
 
     private final StringProperty username = new SimpleStringProperty("");

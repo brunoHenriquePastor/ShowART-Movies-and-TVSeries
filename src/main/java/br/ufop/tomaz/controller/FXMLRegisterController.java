@@ -166,4 +166,5 @@ public class FXMLRegisterController implements Initializable {
         Files.copy(imgFile.toPath(), new FileOutputStream(userImageProfile));
         return userImageProfile.toURI().toURL().toExternalForm();
     }
+
 }

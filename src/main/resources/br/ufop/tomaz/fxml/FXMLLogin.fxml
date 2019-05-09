@@ -46,7 +46,7 @@
                      </JFXButton>
                  </AnchorPane>
                <JFXCheckBox fx:id="ckbKeepMe" checkedColor="#e407a6" layoutX="25.0" layoutY="323.0" text="Keep Me!" textFill="WHITE" unCheckedColor="#e309a975" />
-               <JFXButton fx:id="btnLogin" alignment="CENTER" graphicTextGap="10.0" layoutX="197.0" layoutY="314.0" prefHeight="40.0" prefWidth="135.0" text="Login" AnchorPane.rightAnchor="26.0">
+               <JFXButton fx:id="btnLogin" onAction="#login" alignment="CENTER" graphicTextGap="10.0" layoutX="197.0" layoutY="314.0" prefHeight="40.0" prefWidth="135.0" text="Login" AnchorPane.rightAnchor="26.0">
                   <graphic>
                      <FontIcon iconColor="WHITE" iconLiteral="fa-paper-plane" iconSize="18" />
                   </graphic>

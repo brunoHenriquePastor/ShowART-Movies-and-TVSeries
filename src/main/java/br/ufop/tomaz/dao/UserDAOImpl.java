@@ -6,20 +6,21 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
+import java.util.List;
 
 public class UserDAOImpl implements UserDAO {
 
     private static UserDAOImpl instance = null;
     private EntityManager entityManager;
 
-    public static UserDAOImpl getInstance(){
-        if(instance == null){
+    public static UserDAOImpl getInstance() {
+        if (instance == null) {
             instance = new UserDAOImpl();
         }
         return instance;
     }
 
-    private UserDAOImpl(){
+    private UserDAOImpl() {
         this.entityManager = getEntityManager();
     }
 
@@ -32,12 +33,12 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean addUser(User user) {
-        try{
+        try {
             entityManager.getTransaction().begin();
             entityManager.persist(user);
             entityManager.getTransaction().commit();
             return true;
-        } catch (PersistenceException e){
+        } catch (PersistenceException e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
             return false;
@@ -51,13 +52,13 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean removeUser(User user) {
-        try{
+        try {
             user = entityManager.find(User.class, user.getUsername());
             entityManager.getTransaction().begin();
             entityManager.remove(user);
             entityManager.getTransaction().commit();
             return true;
-        } catch (PersistenceException e){
+        } catch (PersistenceException e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
             return false;
@@ -66,16 +67,22 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean updateUser(User user) {
-        try{
+        try {
             user = entityManager.find(User.class, user.getUsername());
             entityManager.getTransaction().begin();
             entityManager.refresh(user);
             entityManager.getTransaction().commit();
             return true;
-        } catch (PersistenceException e){
+        } catch (PersistenceException e) {
             e.printStackTrace();
             entityManager.getTransaction().rollback();
             return false;
         }
+    }
+
+    @Override
+    public List<User> retrieveRememberedUsers() {
+        return entityManager.createNamedQuery("User.findAllRemembered", User.class)
+                .getResultList();
     }
 }
