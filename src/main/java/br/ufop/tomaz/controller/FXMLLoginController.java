@@ -6,16 +6,16 @@ import br.ufop.tomaz.dao.UserDAO;
 import br.ufop.tomaz.dao.UserDAOImpl;
 import br.ufop.tomaz.model.User;
 import br.ufop.tomaz.util.Screen;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXCheckBox;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.controls.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Circle;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,7 +34,7 @@ public class FXMLLoginController implements Initializable {
     @FXML private JFXButton btnLogin;
 
     private Map<String, User> rememberedUsers = new HashMap<>();
-    //private JFXAutoCompletePopup<User> autoCompletePopup = new JFXAutoCompletePopup<User>();
+    private JFXAutoCompletePopup<User> autoCompletePopup = new JFXAutoCompletePopup<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -71,7 +71,7 @@ public class FXMLLoginController implements Initializable {
     private void loadRememberedUsers(){
         UserDAO userDAO = UserDAOImpl.getInstance();
         List<User> rememberedUsers = userDAO.retrieveRememberedUsers();
-        //initAutoCompletePopup(rememberedUsers);
+        initAutoCompletePopup(rememberedUsers);
         rememberedUsers.forEach(user -> this.rememberedUsers.put(user.getUsername(), user));
 
         //Load the last logged user.
@@ -82,10 +82,8 @@ public class FXMLLoginController implements Initializable {
                     .get();
             loadUser(lastLogged);
         }
-
-
     }
-/*
+
     private void initAutoCompletePopup(List<User> users){
         autoCompletePopup.getSuggestions().addAll(users);
         autoCompletePopup.setSuggestionsCellFactory(new Callback<>() {
@@ -113,7 +111,6 @@ public class FXMLLoginController implements Initializable {
         });
     }
 
- */
     @FXML
     private void login() throws IOException {
         String username = edtUsername.getText();
