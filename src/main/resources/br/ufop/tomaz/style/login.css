@@ -22,6 +22,16 @@
     -jfx-focus-color: linear-gradient(to right, #ff0982, #131dff,#ff0982);
 }
 
+.jfx-autocomplete-popup .autocomplete-list{
+    -fx-fixed-cell-size: 35px;
+    -fx-background-color: TRANSPARENT;
+    -fx-pref-width: 200px;
+}
+
+.jfx-list-cell:focused{
+    -fx-background-color: #240a35;
+}
+
 #btnForgotPassword{
     -fx-underline: TRUE;
     -fx-font-size: 9pt;

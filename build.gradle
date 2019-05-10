@@ -11,8 +11,9 @@ targetCompatibility = 11
 
 javafx {
     version = "12"
-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media','javafx.swing']
+    modules = [ 'javafx.controls', 'javafx.fxml']
 }
+applicationDefaultJvmArgs = ["--add-exports=javafx.graphics/com.sun.javafx.stage=ALL-UNNAMED"]
 
 repositories {
     mavenCentral()

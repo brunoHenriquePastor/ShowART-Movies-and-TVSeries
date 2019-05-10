@@ -41,6 +41,7 @@ public class FXMLLoginController implements Initializable {
         configureImageViewProfile();
         configureButtons();
         loadRememberedUsers();
+        initAutoCompletePopup(new ArrayList<>(rememberedUsers.values()));
     }
 
     @FXML
@@ -71,7 +72,6 @@ public class FXMLLoginController implements Initializable {
     private void loadRememberedUsers(){
         UserDAO userDAO = UserDAOImpl.getInstance();
         List<User> rememberedUsers = userDAO.retrieveRememberedUsers();
-        initAutoCompletePopup(rememberedUsers);
         rememberedUsers.forEach(user -> this.rememberedUsers.put(user.getUsername(), user));
 
         //Load the last logged user.
@@ -85,6 +85,7 @@ public class FXMLLoginController implements Initializable {
     }
 
     private void initAutoCompletePopup(List<User> users){
+        autoCompletePopup.prefWidthProperty().bind(edtUsername.prefWidthProperty());
         autoCompletePopup.getSuggestions().addAll(users);
         autoCompletePopup.setSuggestionsCellFactory(new Callback<>() {
             @Override
@@ -97,17 +98,29 @@ public class FXMLLoginController implements Initializable {
                             setText("");
                         else
                             setText(item.getUsername());
+                        setMaxWidth(200);
                     }
                 };
             }
         });
         autoCompletePopup.setSelectionHandler(event -> loadUser(event.getObject()));
         edtUsername.textProperty().addListener(observable -> {
-            autoCompletePopup.filter(user -> user.getUsername().startsWith(edtUsername.getText()));
+            autoCompletePopup.filter(user -> user.getUsername()
+                    .toUpperCase()
+                    .startsWith(edtUsername.getText().toUpperCase())
+            );
             if(autoCompletePopup.getFilteredSuggestions().isEmpty())
-                autoCompletePopup.show(edtUsername);
-            else
                 autoCompletePopup.hide();
+            else
+                autoCompletePopup.show(edtUsername);
+        });
+
+        //Clear the password field and set image to default if the value is not a valid username
+        edtUsername.textProperty().addListener((ob, ov, nv) ->{
+            if(rememberedUsers.containsKey(nv))
+                loadUser(rememberedUsers.get(nv));
+            else
+                clearFields();
         });
     }
 
@@ -133,6 +146,13 @@ public class FXMLLoginController implements Initializable {
         edtHiddenPassword.setText(user.getPassword());
         ckbKeepMe.setSelected(user.isRememberMyPassword());
         imgProfile.setImage(new Image(user.getImgProfilePath()));
+    }
+
+    private void clearFields(){
+        edtHiddenPassword.setText("");
+        imgProfile.setImage(
+                new Image(getClass().getResourceAsStream("/br/ufop/tomaz/icons/defaultProfileImage.png"))
+        );
     }
 
 }
