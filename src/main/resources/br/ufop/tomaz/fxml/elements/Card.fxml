@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.GridCell?>
+<fx:root alignment="CENTER" contentDisplay="CENTER" prefHeight="219.0" prefWidth="144.0" textFill="TRANSPARENT" type="GridCell" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <graphic>
+       <VBox fx:id="content" alignment="TOP_CENTER" prefHeight="203.0" prefWidth="120" spacing="3.0">
+           <ImageView fx:id="imgPoster" fitHeight="180.0" fitWidth="120.0" preserveRatio="true" />
+           <Label fx:id="lblTitle" text="Title" />
+       </VBox>
+   </graphic>
+</fx:root>

@@ -11,9 +11,13 @@ targetCompatibility = 11
 
 javafx {
     version = "12"
-    modules = [ 'javafx.controls', 'javafx.fxml']
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media']
 }
-applicationDefaultJvmArgs = ["--add-exports=javafx.graphics/com.sun.javafx.stage=ALL-UNNAMED"]
+applicationDefaultJvmArgs = ["--add-exports=javafx.graphics/com.sun.javafx.stage=ALL-UNNAMED",
+                             "--add-opens=javafx.controls/javafx.scene.control.skin=ALL-UNNAMED",
+                             "--add-exports=javafx.graphics/com.sun.javafx.scene=ALL-UNNAMED"
+]
+
 
 repositories {
     mavenCentral()
@@ -23,8 +27,6 @@ repositories {
 mainClassName = 'br.ufop.tomaz.Main'
 
 dependencies {
-    // https://mvnrepository.com/artifact/org.controlsfx/controlsfx
-    compile group: 'org.controlsfx', name: 'controlsfx', version: '11.0.0'
     // https://mvnrepository.com/artifact/com.sun.mail/javax.mail
     compile group: 'com.sun.mail', name: 'javax.mail', version: '1.6.2'
     // https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
@@ -37,6 +39,11 @@ dependencies {
     compile group: 'org.kordamp.ikonli', name: 'ikonli-javafx', version: '11.3.3'
     // https://mvnrepository.com/artifact/org.kordamp.ikonli/ikonli-fontawesome-pack
     compile group: 'org.kordamp.ikonli', name: 'ikonli-fontawesome-pack', version: '11.3.3'
-    
+    // https://mvnrepository.com/artifact/org.controlsfx/controlsfx
+    compile group: 'org.controlsfx', name: 'controlsfx', version: '11.0.0'
+    // https://mvnrepository.com/artifact/com.omertron/themoviedbapi
+    compile group: 'com.omertron', name: 'themoviedbapi', version: '4.3'
+
+
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

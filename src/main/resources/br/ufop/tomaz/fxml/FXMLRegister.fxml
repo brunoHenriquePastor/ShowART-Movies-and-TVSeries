@@ -98,7 +98,7 @@
        </AnchorPane>
    </center>
    <stylesheets>
-      <URL value="@../style/mainStyle.css" />
+      <URL value="@../style/styles.css" />
       <URL value="@../style/register.css" />
       <URL value="@../style/login.css" />
    </stylesheets>

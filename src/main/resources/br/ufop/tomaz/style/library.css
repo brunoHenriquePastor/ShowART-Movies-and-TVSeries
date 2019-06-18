@@ -1,0 +1,10 @@
+.jfx-list-cell:selected{
+    -fx-background-color: PURPLE;
+}
+.jfx-list-view:focused{
+    -fx-border-color: TRANSPARENT;
+    -fx-background-color: TRANSPARENT;
+}
+.grid-view{
+    -fx-padding: 0 0 0 50;
+}

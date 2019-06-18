@@ -20,16 +20,15 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
         setScreen(Screen.LOGIN);
-        /*
-        Parent login = FXMLLoader.load(getClass().getResource("/br/ufop/tomaz/fxml/FXMLLogin.fxml"));
-        primaryStage.setScene(new Scene(login));
-        primaryStage.show();
-        */
     }
 
     public static void setScreen(Screen screen) throws IOException {
         Parent newScreen = FXMLLoader.load(Main.class.getResource(screen.getPath()));
-        stage.setScene(new Scene(newScreen));
+        Scene oldScene = stage.getScene();
+        double width = oldScene != null ? oldScene.getWidth() : 740.0;
+        double height = oldScene != null ? oldScene.getHeight() : 580.0;
+        Scene scene = new Scene(newScreen, width, height);
+        stage.setScene(scene);
         stage.show();
     }
 

@@ -73,6 +73,6 @@
    </top>
    <stylesheets>
       <URL value="@../style/login.css" />
-      <URL value="@../style/mainStyle.css" />
+      <URL value="@../style/styles.css" />
    </stylesheets>
 </BorderPane>

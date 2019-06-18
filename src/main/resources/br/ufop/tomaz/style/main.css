@@ -1,0 +1,14 @@
+.menu-lateral{
+    -fx-background-color: rgba(82, 24, 110, 0.85);
+}
+
+.menu-lateral .button{
+    -fx-background-color: BLUE;
+    -fx-text-fill: WHITE;
+    -fx-alignment: BASELINE_LEFT;
+}
+
+.button{
+    -fx-background-color: purple;
+    -fx-text-fill: WHITE;
+}

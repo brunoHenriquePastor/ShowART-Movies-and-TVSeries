@@ -9,7 +9,7 @@
 <?import org.controlsfx.control.HiddenSidesPane?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="740.0" stylesheets="@../style/main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufop.tomaz.controller.FXMLMainController">
    <top>
        <MenuBar BorderPane.alignment="CENTER">
            <Menu mnemonicParsing="false" text="File">
@@ -24,27 +24,35 @@
        </MenuBar>
    </top>
    <center>
-       <HiddenSidesPane prefHeight="466.0" prefWidth="665.0" triggerDistance="100.0" BorderPane.alignment="CENTER">
+       <HiddenSidesPane fx:id="content" prefHeight="511.0" prefWidth="740.0" triggerDistance="40.0" BorderPane.alignment="CENTER">
            <left>
-               <AnchorPane prefHeight="466.0" prefWidth="87.0" BorderPane.alignment="CENTER">
-                   <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="209.0" prefHeight="49.0" prefWidth="73.0" text="Button" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <AnchorPane prefHeight="511.0" prefWidth="222.0" styleClass="menu-lateral" BorderPane.alignment="CENTER">
+                   <JFXButton layoutX="44.0" layoutY="129.0" prefHeight="42.0" prefWidth="178.0" text="Search">
                        <graphic>
-                           <FontIcon iconLiteral="fa-home" iconSize="25" />
+                           <FontIcon iconLiteral="fa-search" />
                        </graphic>
                    </JFXButton>
-                   <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="272.0" prefHeight="49.0" prefWidth="73.0" text="Button" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                   <JFXButton layoutX="44.0" layoutY="171.0" prefHeight="42.0" prefWidth="178.0" text="Add">
                        <graphic>
-                           <FontIcon iconLiteral="fa-question" iconSize="25" />
+                           <FontIcon iconLiteral="fa-plus" />
                        </graphic>
                    </JFXButton>
-                   <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="14.0" layoutY="154.0" prefHeight="49.0" prefWidth="73.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                   <JFXButton layoutX="44.0" layoutY="213.0" prefHeight="42.0" prefWidth="178.0" text="Settings">
                        <graphic>
-                           <FontIcon iconLiteral="fa-search" iconSize="25" />
+                           <FontIcon iconLiteral="fa-gears" />
                        </graphic>
                    </JFXButton>
                </AnchorPane>
            </left>
+           <bottom>
+               <JFXButton prefHeight="53.0" prefWidth="219.0" text="This is bottom button" BorderPane.alignment="CENTER" />
+           </bottom>
        </HiddenSidesPane>
    </center>
+   <left>
+      <AnchorPane prefHeight="511.0" prefWidth="40.0" styleClass="menu-lateral" BorderPane.alignment="CENTER" />
+   </left>
+
+
 
 </BorderPane>

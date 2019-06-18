@@ -1,0 +1,10 @@
+.button-play:hover{
+    -fx-opacity: 1.0;
+}
+.button-play{
+    -fx-background-color: rgba(128, 24, 113, 0.67);
+    -fx-opacity: 0.0;
+}
+.ikonli-font-icon{
+    -fx-fill: WHITE;
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+<?import org.controlsfx.control.GridView?>
+<?import java.net.URL?>
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="511.0" prefWidth="736.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufop.tomaz.controller.FXMLSeriesLibraryController">
+    <AnchorPane>
+        <Label layoutX="15.0" layoutY="37.0" text="You were watching..." AnchorPane.leftAnchor="15.0" />
+        <JFXListView fx:id="youWereWatchingListView" layoutX="15.0" layoutY="61.0" orientation="HORIZONTAL" prefHeight="230.0" prefWidth="704.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+        <Label layoutX="15.0" layoutY="301.0" text="Library" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="301.0" />
+
+        <GridView fx:id="libraryGridView"
+                  horizontalCellSpacing="0"
+                  verticalCellSpacing="5"
+                  cellWidth="144.0" cellHeight="219.0"
+                  layoutX="15.0" layoutY="319.0"
+                  AnchorPane.leftAnchor="15.0"
+                  AnchorPane.rightAnchor="15.0"
+                  AnchorPane.topAnchor="319.0"
+         />
+    </AnchorPane>
+   <stylesheets>
+      <URL value="@../style/library.css" />
+   </stylesheets>
+</ScrollPane>
